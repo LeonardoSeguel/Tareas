@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tareas</string>
+    <string name="entrar">Entrar</string>
+    <string name="password">Contraseña</string>
+    <string name="log_in">Iniciar Sesión</string>
+    <string name="username">Usuario</string>
+    <string name="add_button" />
+    <string name="agregar">Agregar</string>
+    <string name="tarea_nueva">Tarea Nueva</string>
+    <string name="gestor_de_tareas">Gestor de Tareas</string>
+    <string name="editar">Editar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="mostrar_todos">Mostrar Todos</string>
+    <string name="eliminar">Eliminar</string>
+</resources>
