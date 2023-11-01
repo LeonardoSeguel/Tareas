@@ -12,4 +12,17 @@
     <string name="actualizar">Actualizar</string>
     <string name="mostrar_todos">Mostrar Todos</string>
     <string name="eliminar">Eliminar</string>
+    <string name="alta">Alta</string>
+    <string name="media">Media</string>
+    <string name="baja">Baja</string>
+    <string name="finalizada">Finalizada</string>
+    <string name="actualizar_nombre">Actualizar Tarea</string>
+    <string name="id">ID</string>
+    <string-array name="opciones_filtro">
+        <item>A - Z</item>
+        <item>Z - A</item>
+        <item>ID: Menor a Mayor</item>
+        <item>ID: Mayor a Menor</item>
+    </string-array>
+
 </resources>
