@@ -44,6 +44,6 @@ public class Item {
     @Override
     public String toString() {
         String estadoTexto = (estado) ? "Finalizada" : "";
-        return id + ". " + texto + " (" + prioridad +  ") | " + estadoTexto;
+        return id + ". " + texto + " (" + prioridad + ") | " + estadoTexto;
     }
 }

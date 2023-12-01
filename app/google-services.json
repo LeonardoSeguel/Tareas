@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "693928990658",
+    "project_id": "tareas-20f72",
+    "storage_bucket": "tareas-20f72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693928990658:android:8a7275806c69a0d669685b",
+        "android_client_info": {
+          "package_name": "com.lseguel.tareas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIkI-tira_LPxgeKduFe-vaX47S7tSQig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

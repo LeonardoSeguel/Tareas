@@ -14,11 +14,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class MainActivity extends AppCompatActivity {
+
+// ...
+
 
     private ArrayList<Item> listaElementos;
     private ArrayAdapter<Item> adaptador;
@@ -27,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText campoTexto;
     private int contadorId = 1;
 
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         campoTexto = findViewById(R.id.editText);
         EditText campoId = findViewById(R.id.editTextNumber);
@@ -65,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
             Item item = new Item(contadorId++, texto, prioridadSeleccionada, esSeleccionado);
             listaElementos.add(item);
+
+            mDatabase.child("items").child(String.valueOf(item.getId())).setValue(item);
             adaptador.notifyDataSetChanged();
 
             campoTexto.setText("");
@@ -128,15 +140,12 @@ public class MainActivity extends AppCompatActivity {
         btnEliminar.setOnClickListener(v -> {
             try {
                 int idAEliminar = Integer.parseInt(campoId.getText().toString());
-                for (int i = 0; i < listaElementos.size(); i++) {
-                    if (listaElementos.get(i).getId() == idAEliminar) {
-                        listaElementos.remove(i);
-                        adaptador.notifyDataSetChanged();
-                        Toast.makeText(this, "Elemento eliminado", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                }
-                Toast.makeText(this, "ID no encontrado", Toast.LENGTH_SHORT).show();
+
+                mDatabase.child("items").child(String.valueOf(idAEliminar)).removeValue()
+                        .addOnSuccessListener(aVoid ->
+                                Toast.makeText(MainActivity.this, "Elemento eliminado", Toast.LENGTH_SHORT).show())
+                        .addOnFailureListener(e ->
+                                Toast.makeText(MainActivity.this, "Error al eliminar", Toast.LENGTH_SHORT).show());
             } catch (NumberFormatException e) {
                 Toast.makeText(this, "Por favor, introduce un ID válido", Toast.LENGTH_SHORT).show();
             }

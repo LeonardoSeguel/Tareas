@@ -18,6 +18,10 @@
     <string name="finalizada">Finalizada</string>
     <string name="actualizar_nombre">Actualizar Tarea</string>
     <string name="id">ID</string>
+    <string name="crear">Crear</string>
+    <string name="registrar_cuenta">Registrar Cuenta</string>
+    <string name="correo">Correo</string>
+    <string name="registrar">Registrar</string>
     <string-array name="opciones_filtro">
         <item>A - Z</item>
         <item>Z - A</item>
